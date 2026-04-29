@@ -1,0 +1,39 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --ink: #102029;
+  --muted: #506672;
+  --brand: #0f766e;
+}
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  background: linear-gradient(140deg, #f7fafc, #e2f3ef);
+  color: var(--ink);
+}
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(11, 24, 36, 0.06);
+}
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+input, button, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d6dbe1;
+}
+button {
+  background: var(--brand);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+a { color: #0f766e; text-decoration: none; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid #e8edf1; }
