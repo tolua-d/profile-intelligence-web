@@ -4,12 +4,18 @@ networks:
 
 services:
   profile_frontend:
-    build: .
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_API_BASE_URL: ${API_BASE_URL}
+        NEXT_PUBLIC_ENABLE_EXPORT: ${NEXT_PUBLIC_ENABLE_EXPORT:-true}
     ports:
       - ${FRONTEND_PORT}:3000
     container_name: profile_frontend
     environment:
       - API_BASE_URL=${API_BASE_URL}
+      - NEXT_PUBLIC_API_BASE_URL=${API_BASE_URL}
+      - NEXT_PUBLIC_ENABLE_EXPORT=${NEXT_PUBLIC_ENABLE_EXPORT:-true}
     networks:
       - default
     healthcheck:

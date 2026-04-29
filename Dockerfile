@@ -1,6 +1,15 @@
 # Build stage
 FROM node:alpine AS builder
 WORKDIR /app
+
+# Accept build arguments
+ARG NEXT_PUBLIC_API_BASE_URL
+ARG NEXT_PUBLIC_ENABLE_EXPORT=true
+
+# Set environment variables for build
+ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
+ENV NEXT_PUBLIC_ENABLE_EXPORT=$NEXT_PUBLIC_ENABLE_EXPORT
+
 COPY package.json yarn.lock ./
 RUN yarn install
 COPY . .
