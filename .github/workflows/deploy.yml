@@ -22,8 +22,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: yarn install
+
+      - name: Build frontend
+        run: yarn build
 
       - name: Install Railway CLI
         run: |
